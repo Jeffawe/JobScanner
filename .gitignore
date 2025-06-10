@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python environment files
+*.env
+.env.*
+.envrc
+
+# pip tools
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage & test reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Pytest
+.pytest_cache/
+
+# MyPy & Pylint
+.mypy_cache/
+.dmypy.json
+pylint-report.txt
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# FastAPI static/media dirs (if generated)
+staticfiles/
+media/
+
+# Node.js frontend (if applicable)
+node_modules/
+*.tsbuildinfo
+
+# SQLite or temporary DB files
+*.sqlite3
+*.db
+
+# VSCode Python-specific cache
+.python-version
+
+# Local deployment settings
+*.local
+*.bak
