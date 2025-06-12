@@ -41,6 +41,7 @@ SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+EXTENSION_ID = os.getenv("EXTENSION_ID", "none")
 
 # Rate limiting configuration
 limiter = Limiter(key_func=get_remote_address)
@@ -105,10 +106,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware, # type: ignore
     allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:8080",
-        "chrome-extension://your-extension-id-here"
-    ] if ENVIRONMENT == "development" else ["https://yourdomain.com"],
+        f"chrome-extension://{EXTENSION_ID}"
+    ] if ENVIRONMENT == "development" else [f"chrome-extension://{EXTENSION_ID}"],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
