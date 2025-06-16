@@ -1,12 +1,14 @@
 from typing import Optional, Dict, Any, List
 import spacy
 import re
-
 from fastapi import HTTPException
 from keybert import KeyBERT
 from schema import JobAnalysisResponse, Skill
 import logging
 import sys
+import os
+
+# os.environ["HF_HUB_TOKEN"] = os.environ.get("HF_HUB_TOKEN")
 
 logging.basicConfig(
     level=logging.DEBUG,  # or INFO if you want less noise
