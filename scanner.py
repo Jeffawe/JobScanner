@@ -6,7 +6,7 @@ from keybert import KeyBERT
 from schema import JobAnalysisResponse, Skill
 import logging
 import sys
-import os
+from sentence_transformers import SentenceTransformer
 
 # os.environ["HF_HUB_TOKEN"] = os.environ.get("HF_HUB_TOKEN")
 
@@ -25,8 +25,8 @@ except OSError:
     print("Please install spacy English model: python -m spacy download en_core_web_sm")
     raise
 
-# Initialize KeyBERT
-kw_model = KeyBERT()
+local_model = SentenceTransformer("all-MiniLM-L6-v2")
+kw_model = KeyBERT(model=local_model)
 
 
 class JobAnalyzer:
